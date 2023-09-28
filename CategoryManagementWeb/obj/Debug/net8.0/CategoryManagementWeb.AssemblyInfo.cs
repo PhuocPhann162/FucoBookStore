@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CategoryManagementWeb")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a3c5df5e486062b566384ef4ee21eb1ab70ac8bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6effc5cceb67055f4434ed6d40e7c4c6364d3415")]
 [assembly: System.Reflection.AssemblyProductAttribute("CategoryManagementWeb")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CategoryManagementWeb")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
