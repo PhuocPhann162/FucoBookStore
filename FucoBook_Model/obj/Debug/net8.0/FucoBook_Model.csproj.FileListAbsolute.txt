@@ -1,0 +1,12 @@
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\bin\Debug\net8.0\FucoBook_Model.deps.json
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\bin\Debug\net8.0\FucoBook_Model.dll
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\bin\Debug\net8.0\FucoBook_Model.pdb
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.AssemblyInfo.cs
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.sourcelink.json
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.dll
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\refint\FucoBook_Model.dll
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\FucoBook_Model.pdb
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Model\obj\Debug\net8.0\ref\FucoBook_Model.dll
