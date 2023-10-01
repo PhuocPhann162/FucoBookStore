@@ -28,12 +28,66 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Product obj)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _unitOfWork.Product.Add(obj);
-                return RedirectToAction("Index");
+                _unitOfWork.Save();
+                TempData["success"] = "Product created successfully";
+                return RedirectToAction("Index", "Product");
             }
             return View();
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Product p = _unitOfWork.Product.Get(u => u.Id == id);
+            if (p == null)
+            {
+                return NotFound();
+            }
+            return View(p);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Product obj)
+        {
+            if (ModelState.IsValid)
+            {
+                _unitOfWork.Product.Update(obj);
+                _unitOfWork.Save();
+                TempData["success"] = "Product edited successfully";
+                return RedirectToAction("Index", "Product");
+
+            }
+            return View();
+        }
+
+        public IActionResult Delete(int? id)
+        {
+            if (id == null || id == 0)
+            {
+                return NotFound();
+            }
+            Product p = _unitOfWork.Product.Get(u => u.Id == id);
+            if (p == null)
+            {
+                return NotFound();
+            }
+            return View(p);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeletePost(int? id)
+        {
+            Product obj = _unitOfWork.Product.Get(u => u.Id == id);
+            if(obj == null)
+            {
+                return NotFound();
+            }
+            _unitOfWork.Product.Remove(obj);
+            _unitOfWork.Save();
+            TempData["success"] = "Product deleted successfully";
+            return RedirectToAction("Index", "Product");
         }
     }
 }
