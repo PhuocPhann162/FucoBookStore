@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FucoBook_Model")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47dc3a447266db43a3e32373603f9948a8e6005e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b96834f62c3e2e4aad35b598eed9dcc6138532f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FucoBook_Model")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FucoBook_Model")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
