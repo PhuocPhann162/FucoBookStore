@@ -20,7 +20,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
 
         public IActionResult Index()
         {
-            List<Product> lstProduct = _unitOfWork.Product.GetAll().ToList();
+            List<Product> lstProduct = _unitOfWork.Product.GetAll(includeProperties:"Category").ToList();
 
             return View(lstProduct);
         }
@@ -64,12 +64,12 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     string productPath = Path.Combine(wwwRootPath + @"\images\product");
 
-                    if(!string.IsNullOrEmpty(productVM.Product.ImageUrl))
+                    if (!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
                         // delete the old image 
                         var oldImagePath = Path.Combine(wwwRootPath + productVM.Product.ImageUrl);
 
-                        if(System.IO.File.Exists(oldImagePath))
+                        if (System.IO.File.Exists(oldImagePath))
                         {
                             System.IO.File.Delete(oldImagePath);
                         }
@@ -82,7 +82,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                     productVM.Product.ImageUrl = @"\images\product\" + fileName;
                 }
 
-                if(productVM.Product.Id != 0)
+                if (productVM.Product.Id != 0)
                 {
                     _unitOfWork.Product.Update(productVM.Product);
                     _unitOfWork.Save();

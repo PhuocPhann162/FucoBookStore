@@ -44,9 +44,13 @@ namespace FucoBook_Model.Models
         [Required]
         [Display(Name = "Category")]
         public int CategoryId { get; set; }
+
         [ForeignKey("CategoryId")]
         [ValidateNever]
         public Category Category { get; set; }
+
+        [Required]
+        [ValidateNever]
         public string ImageUrl { get; set; }
     }
 }
