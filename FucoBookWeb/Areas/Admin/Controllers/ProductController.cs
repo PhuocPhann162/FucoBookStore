@@ -67,7 +67,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                     if(!string.IsNullOrEmpty(productVM.Product.ImageUrl))
                     {
                         // delete the old image 
-                        var oldImagePath = Path.Combine(wwwRootPath + productVM.Product.ImageUrl.TrimStart('\\'));
+                        var oldImagePath = Path.Combine(wwwRootPath + productVM.Product.ImageUrl);
 
                         if(System.IO.File.Exists(oldImagePath))
                         {

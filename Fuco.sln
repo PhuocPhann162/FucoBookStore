@@ -5,11 +5,11 @@ VisualStudioVersion = 17.8.34112.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FucoBookWeb", "FucoBookWeb\FucoBookWeb.csproj", "{56351AE3-F4FB-4780-AA46-091CE7B92E69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FucoBook_DataAccess", "FucoBook_DataAccess\FucoBook_DataAccess.csproj", "{62561275-CE04-4B9D-8979-F61E6436F98B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FucoBook_DataAccess", "FucoBook_DataAccess\FucoBook_DataAccess.csproj", "{62561275-CE04-4B9D-8979-F61E6436F98B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FucoBook_Model", "FucoBook_Model\FucoBook_Model.csproj", "{8817D14B-7933-40D8-A147-D93748FE3D8D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FucoBook_Model", "FucoBook_Model\FucoBook_Model.csproj", "{8817D14B-7933-40D8-A147-D93748FE3D8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FucoBook_Utility", "FucoBook_Utility\FucoBook_Utility.csproj", "{0CBB987B-D3B2-4718-9531-BD94E0AAD0CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FucoBook_Utility", "FucoBook_Utility\FucoBook_Utility.csproj", "{0CBB987B-D3B2-4718-9531-BD94E0AAD0CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
