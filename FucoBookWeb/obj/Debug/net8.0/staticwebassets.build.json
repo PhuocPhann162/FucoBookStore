@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "aL/7FwUQFKyPUzgDkkiXUkMskz0dq2W7WG6MnhHQrdE=",
+  "Hash": "8SkJ0G4dZzTCDkDWAxq6Mz+B2Pq0+oFudwGEU8Mamm0=",
   "Source": "FucoBookWeb",
   "BasePath": "_content/FucoBookWeb",
   "Mode": "Default",
@@ -243,6 +243,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\product\\c9c836ff-7aa8-49be-8c0e-bf82cd15f61a.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\product.js",
+      "SourceId": "FucoBookWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\",
+      "BasePath": "_content/FucoBookWeb",
+      "RelativePath": "js/product.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\product.js"
     },
     {
       "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\site.js",
