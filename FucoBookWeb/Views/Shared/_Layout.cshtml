@@ -12,10 +12,9 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"/>
 
-
 </head>
 <body>
-    <header>
+    <header class="fixed-top" style="position:fixed width:100%">
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">FucoWeb</a>
@@ -49,14 +48,14 @@
             </div>
         </nav>
     </header>
-    <div class="container">
+    <div class="container" style="margin-top:73px">
         <main role="main" class="pb-3">
             <partial name="_Notification" />
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer bg-primary text-muted text-white-50">
+    <footer class="border-top footer bg-primary text-muted text-white-50 fixed-bottom">
         <div class="text-center">
             Make with <i class="bi bi-android2"></i> by PhuocPhan
         </div>
@@ -64,8 +63,10 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" asp-append-version="true"></script>
     <script src="https://cdn.tiny.cloud/1/4fjnu2yb8nkbm5zu7igdbp9kbr8cr2sfi2n9l7lrcp2x3cv7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>
