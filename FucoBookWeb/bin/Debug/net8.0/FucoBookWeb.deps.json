@@ -9,8 +9,11 @@
       "FucoBookWeb/1.0.0": {
         "dependencies": {
           "FucoBook_DataAccess": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0-rc.1.23421.29",
+          "Microsoft.AspNetCore.Identity.UI": "8.0.0-rc.1.23421.29",
           "Microsoft.EntityFrameworkCore": "8.0.0-rc.1.23419.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.1.23419.6",
+          "Microsoft.EntityFrameworkCore.Sqlite": "8.0.0-rc.1.23419.6",
           "Microsoft.EntityFrameworkCore.Tools": "8.0.0-rc.1.23419.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.0-rc.1.23461.3"
         },
@@ -627,10 +630,15 @@
           "Microsoft.AspNetCore.Authorization": "2.2.0"
         }
       },
-      "Microsoft.AspNetCore.Cryptography.Internal/2.2.0": {},
+      "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.1.23421.29": {},
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "8.0.0-rc.1.23421.29"
+        }
+      },
       "Microsoft.AspNetCore.DataProtection/2.2.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Cryptography.Internal": "2.2.0",
+          "Microsoft.AspNetCore.Cryptography.Internal": "8.0.0-rc.1.23421.29",
           "Microsoft.AspNetCore.DataProtection.Abstractions": "2.2.0",
           "Microsoft.AspNetCore.Hosting.Abstractions": "2.2.0",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.1.23419.4",
@@ -679,7 +687,7 @@
       "Microsoft.AspNetCore.Http.Extensions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4",
           "Microsoft.Net.Http.Headers": "2.2.0",
           "System.Buffers": "4.5.0"
         }
@@ -687,6 +695,30 @@
       "Microsoft.AspNetCore.Http.Features/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.0-rc.1.23419.6",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0-rc.1.23421.29"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.42129"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0-rc.1.23421.29"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.42129"
+          }
         }
       },
       "Microsoft.AspNetCore.JsonPatch/2.2.0": {
@@ -720,7 +752,7 @@
           "Microsoft.AspNetCore.Routing.Abstractions": "2.2.0",
           "Microsoft.Extensions.DependencyInjection": "8.0.0-rc.1.23419.4",
           "Microsoft.Extensions.DependencyModel": "8.0.0-rc.1.23419.4",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0-rc.1.23419.4",
           "System.Diagnostics.DiagnosticSource": "6.0.0",
           "System.Threading.Tasks.Extensions": "4.5.4"
@@ -1307,6 +1339,17 @@
           }
         }
       },
+      "Microsoft.Data.Sqlite.Core/8.0.0-rc.1.23419.6": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.6-pre20230809203314"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Data.Sqlite.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.41906"
+          }
+        }
+      },
       "Microsoft.DiaSymReader/1.4.0": {
         "dependencies": {
           "NETStandard.Library": "1.6.1"
@@ -1382,6 +1425,25 @@
           }
         }
       },
+      "Microsoft.EntityFrameworkCore.Sqlite/8.0.0-rc.1.23419.6": {
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore.Sqlite.Core": "8.0.0-rc.1.23419.6",
+          "SQLitePCLRaw.bundle_e_sqlite3": "2.1.6-pre20230809203314"
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Sqlite.Core/8.0.0-rc.1.23419.6": {
+        "dependencies": {
+          "Microsoft.Data.Sqlite.Core": "8.0.0-rc.1.23419.6",
+          "Microsoft.EntityFrameworkCore.Relational": "8.0.0-rc.1.23419.6",
+          "Microsoft.Extensions.DependencyModel": "8.0.0-rc.1.23419.4"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.EntityFrameworkCore.Sqlite.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.41906"
+          }
+        }
+      },
       "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-rc.1.23419.6": {
         "dependencies": {
           "Microsoft.Data.SqlClient": "5.1.1",
@@ -1436,17 +1498,36 @@
           }
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4"
         }
       },
       "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "8.0.0-rc.1.23419.4",
           "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.1.23419.4",
-          "Microsoft.Extensions.FileProviders.Abstractions": "2.2.0",
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4",
           "Microsoft.Extensions.Logging.Abstractions": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Identity.Core/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Logging": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Options": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Identity.Core": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Logging": "8.0.0-rc.1.23419.4"
         }
       },
       "Microsoft.Extensions.Localization/2.2.0": {
@@ -1947,6 +2028,144 @@
       "runtime.ubuntu.14.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.04-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
       "runtime.ubuntu.16.10-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {},
+      "SQLitePCLRaw.bundle_e_sqlite3/2.1.6-pre20230809203314": {
+        "dependencies": {
+          "SQLitePCLRaw.lib.e_sqlite3": "2.1.6-pre20230809203314",
+          "SQLitePCLRaw.provider.e_sqlite3": "2.1.6-pre20230809203314"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.batteries_v2.dll": {
+            "assemblyVersion": "2.1.6.2046",
+            "fileVersion": "2.1.6.2046"
+          }
+        }
+      },
+      "SQLitePCLRaw.core/2.1.6-pre20230809203314": {
+        "dependencies": {
+          "System.Memory": "4.5.4"
+        },
+        "runtime": {
+          "lib/netstandard2.0/SQLitePCLRaw.core.dll": {
+            "assemblyVersion": "2.1.6.2046",
+            "fileVersion": "2.1.6.2046"
+          }
+        }
+      },
+      "SQLitePCLRaw.lib.e_sqlite3/2.1.6-pre20230809203314": {
+        "runtimeTargets": {
+          "runtimes/browser-wasm/nativeassets/net8.0/e_sqlite3.a": {
+            "rid": "browser-wasm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm/native/libe_sqlite3.so": {
+            "rid": "linux-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-armel/native/libe_sqlite3.so": {
+            "rid": "linux-armel",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-mips64/native/libe_sqlite3.so": {
+            "rid": "linux-mips64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-arm64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-musl-x64/native/libe_sqlite3.so": {
+            "rid": "linux-musl-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-ppc64le/native/libe_sqlite3.so": {
+            "rid": "linux-ppc64le",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-s390x/native/libe_sqlite3.so": {
+            "rid": "linux-s390x",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x64/native/libe_sqlite3.so": {
+            "rid": "linux-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/linux-x86/native/libe_sqlite3.so": {
+            "rid": "linux-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-arm64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/maccatalyst-x64/native/libe_sqlite3.dylib": {
+            "rid": "maccatalyst-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-arm64/native/libe_sqlite3.dylib": {
+            "rid": "osx-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/osx-x64/native/libe_sqlite3.dylib": {
+            "rid": "osx-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm/native/e_sqlite3.dll": {
+            "rid": "win-arm",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-arm64/native/e_sqlite3.dll": {
+            "rid": "win-arm64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x64/native/e_sqlite3.dll": {
+            "rid": "win-x64",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          },
+          "runtimes/win-x86/native/e_sqlite3.dll": {
+            "rid": "win-x86",
+            "assetType": "native",
+            "fileVersion": "0.0.0.0"
+          }
+        }
+      },
+      "SQLitePCLRaw.provider.e_sqlite3/2.1.6-pre20230809203314": {
+        "dependencies": {
+          "SQLitePCLRaw.core": "2.1.6-pre20230809203314"
+        },
+        "runtime": {
+          "lib/net6.0/SQLitePCLRaw.provider.e_sqlite3.dll": {
+            "assemblyVersion": "2.1.6.2046",
+            "fileVersion": "2.1.6.2046"
+          }
+        }
+      },
       "System.AppContext/4.3.0": {
         "dependencies": {
           "System.Runtime": "4.3.0"
@@ -2727,6 +2946,7 @@
         "dependencies": {
           "FucoBook_Model": "1.0.0",
           "FucoBook_Utility": "1.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0-rc.1.23421.29",
           "Microsoft.EntityFrameworkCore": "8.0.0-rc.1.23419.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "8.0.0-rc.1.23419.6"
         },
@@ -2736,7 +2956,8 @@
       },
       "FucoBook_Model/1.0.0": {
         "dependencies": {
-          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0"
+          "Microsoft.AspNetCore.Mvc.ViewFeatures": "2.2.0",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0-rc.1.23421.29"
         },
         "runtime": {
           "FucoBook_Model.dll": {}
@@ -3154,12 +3375,19 @@
       "path": "microsoft.aspnetcore.authorization.policy/2.2.0",
       "hashPath": "microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512"
     },
-    "Microsoft.AspNetCore.Cryptography.Internal/2.2.0": {
+    "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.1.23421.29": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-GXmMD8/vuTLPLvKzKEPz/4vapC5e0cwx1tUVd83ePRyWF9CCrn/pg4/1I+tGkQqFLPvi3nlI2QtPtC6MQN8Nww==",
-      "path": "microsoft.aspnetcore.cryptography.internal/2.2.0",
-      "hashPath": "microsoft.aspnetcore.cryptography.internal.2.2.0.nupkg.sha512"
+      "sha512": "sha512-U31rfHMcngJbA1mFnGu9ybaOcLbS0fZOEwx5zCNoyTJTgPVXFVFtScXg7ITKG0r+rhJrrX5p9B3nKfyb7hUYQQ==",
+      "path": "microsoft.aspnetcore.cryptography.internal/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCDKoulG704yBaPtEbVWpGCD71vui3yUhBEuuYCsY3CPc5cevlD/XBW3e0DvXX0kExT94HaVniHEThajFlmdsw==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.8.0.0-rc.1.23421.29.nupkg.sha512"
     },
     "Microsoft.AspNetCore.DataProtection/2.2.0": {
       "type": "package",
@@ -3230,6 +3458,20 @@
       "sha512": "sha512-ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
       "path": "microsoft.aspnetcore.http.features/2.2.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lAZ9tjPUgrZMwY9PhABnu1PcOBXyT1/B5nA7XyCVfRDaVnhF8oOEeJ5jzOiQRmnmFqm3pHz5bDOZyMCtaCtOdg==",
+      "path": "microsoft.aspnetcore.identity.entityframeworkcore/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.identity.entityframeworkcore.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Je/XGkV3aQWC2st0tCLDYUg6bg/GZojdTneqXhCqWujsjpn5K2MeZj6fvbck6jKMnoxklA3XzgyzTltUZVofPw==",
+      "path": "microsoft.aspnetcore.identity.ui/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.identity.ui.8.0.0-rc.1.23421.29.nupkg.sha512"
     },
     "Microsoft.AspNetCore.JsonPatch/2.2.0": {
       "type": "package",
@@ -3427,6 +3669,13 @@
       "path": "microsoft.data.sqlclient.sni.runtime/5.1.0",
       "hashPath": "microsoft.data.sqlclient.sni.runtime.5.1.0.nupkg.sha512"
     },
+    "Microsoft.Data.Sqlite.Core/8.0.0-rc.1.23419.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-VP1YCWfLC4p6Nzrks7NSFhfPmhl5jNqNmBplO/8dUzCODaab1JsjKAYKWetQRynLRxU4GWkI7pSd8Loq46RcCw==",
+      "path": "microsoft.data.sqlite.core/8.0.0-rc.1.23419.6",
+      "hashPath": "microsoft.data.sqlite.core.8.0.0-rc.1.23419.6.nupkg.sha512"
+    },
     "Microsoft.DiaSymReader/1.4.0": {
       "type": "package",
       "serviceable": true,
@@ -3475,6 +3724,20 @@
       "sha512": "sha512-9yLGmPUFenll0nbKkyUhulrM70y7i1nrqnjJelD3sASUdho/MnZKffqjwoGJFgPIAtPIUoUGsz0QA2REkJkbLA==",
       "path": "microsoft.entityframeworkcore.relational/8.0.0-rc.1.23419.6",
       "hashPath": "microsoft.entityframeworkcore.relational.8.0.0-rc.1.23419.6.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite/8.0.0-rc.1.23419.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-UqRQK3HQi+mXMr/peoIP7yR0z4wjKtUVsJv5jbSzaHq3/D1peX6xJuXEKPcearwQZ8kHAktCwEuTMJoXzJfSKg==",
+      "path": "microsoft.entityframeworkcore.sqlite/8.0.0-rc.1.23419.6",
+      "hashPath": "microsoft.entityframeworkcore.sqlite.8.0.0-rc.1.23419.6.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Sqlite.Core/8.0.0-rc.1.23419.6": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TL1ZRgkr5F68IcwcAL0PMB7jlmpEEbCBUyk8veCT1OVh8/28zHOWxQ2v9P5qduXtL7uVBtgFjAFIv95coL+bfQ==",
+      "path": "microsoft.entityframeworkcore.sqlite.core/8.0.0-rc.1.23419.6",
+      "hashPath": "microsoft.entityframeworkcore.sqlite.core.8.0.0-rc.1.23419.6.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.SqlServer/8.0.0-rc.1.23419.6": {
       "type": "package",
@@ -3532,12 +3795,19 @@
       "path": "microsoft.extensions.dependencymodel/8.0.0-rc.1.23419.4",
       "hashPath": "microsoft.extensions.dependencymodel.8.0.0-rc.1.23419.4.nupkg.sha512"
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EcnaSsPTqx2MGnHrmWOD0ugbuuqVT8iICqSqPzi45V5/MA1LjUNb0kwgcxBGqizV1R+WeBK7/Gw25Jzkyk9bIw==",
-      "path": "microsoft.extensions.fileproviders.abstractions/2.2.0",
-      "hashPath": "microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512"
+      "sha512": "sha512-yFiU9oAF+abTk1gjMLrPRmzhz+ZJc0Q4S7NvK9EtzS0Sm1J8DcbzsRUi6r8eufvtmbGzk5KNPcpOo8ffAD9p0A==",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ODUTtJ9093Hk45xpxsGz3jTu+cX6jgbuCAyB5yxM3Hm5wiZl+TnDea5nHfe+AFt8M7sltBRcojFy2adMtdBvIA==",
+      "path": "microsoft.extensions.fileproviders.embedded/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.fileproviders.embedded.8.0.0-rc.1.23421.29.nupkg.sha512"
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
       "type": "package",
@@ -3545,6 +3815,20 @@
       "sha512": "sha512-+k4AEn68HOJat5gj1TWa6X28WlirNQO9sPIIeQbia+91n03esEtMSSoekSTpMjUzjqtJWQN3McVx0GvSPFHF/Q==",
       "path": "microsoft.extensions.hosting.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Core/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HeX6D7DmgL5Vr0ALN7MaCLaJqDL0PKVQ2KfRua48yyAtzIXY+63v7n7b5dxqptiI5j26QxyH9IAbty5WbHkcmA==",
+      "path": "microsoft.extensions.identity.core/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.identity.core.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Stores/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sMhDE+dH89Dr/yZCIOgOcLbMgiolp9dWvTtApccm5pbXrsw9akv/30dSYW0YYJpVUkDv0CaJpDS4L1ruIdjbVw==",
+      "path": "microsoft.extensions.identity.stores/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.identity.stores.8.0.0-rc.1.23421.29.nupkg.sha512"
     },
     "Microsoft.Extensions.Localization/2.2.0": {
       "type": "package",
@@ -3965,6 +4249,34 @@
       "sha512": "sha512-VB5cn/7OzUfzdnC8tqAIMQciVLiq2epm2NrAm1E9OjNRyG4lVhfR61SMcLizejzQP8R8Uf/0l5qOIbUEi+RdEg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.0",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512"
+    },
+    "SQLitePCLRaw.bundle_e_sqlite3/2.1.6-pre20230809203314": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fyr8Kpawvf9aNXu1qPmJoPFAFIrw1Bvwv5m8FXu4ZQ7PulXL6GfhEzUlvXH9IUd3oeiFgY+O3czSpFlG9nJ5Mg==",
+      "path": "sqlitepclraw.bundle_e_sqlite3/2.1.6-pre20230809203314",
+      "hashPath": "sqlitepclraw.bundle_e_sqlite3.2.1.6-pre20230809203314.nupkg.sha512"
+    },
+    "SQLitePCLRaw.core/2.1.6-pre20230809203314": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-6Z3ToStsGMOIGtCAxET1lkbb/8i80W7Gu/FX7p7kFWMPj+Yf8O/uQUzK0kEmnrDXL+myOQRxz5xyedzBf1d3+Q==",
+      "path": "sqlitepclraw.core/2.1.6-pre20230809203314",
+      "hashPath": "sqlitepclraw.core.2.1.6-pre20230809203314.nupkg.sha512"
+    },
+    "SQLitePCLRaw.lib.e_sqlite3/2.1.6-pre20230809203314": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-csznG0mg6RXhNW454kjEYLLslGSxYdDS5rgi/BXwGk9ikdAX3NxWinJQcROkACD5l4RlwkljnB3IRmrQ+/3EnQ==",
+      "path": "sqlitepclraw.lib.e_sqlite3/2.1.6-pre20230809203314",
+      "hashPath": "sqlitepclraw.lib.e_sqlite3.2.1.6-pre20230809203314.nupkg.sha512"
+    },
+    "SQLitePCLRaw.provider.e_sqlite3/2.1.6-pre20230809203314": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-1efEOCO9k4/BBsuHMPrUlY1+bfBTGaZiFl1zij4kvSP1IX5ao1O+bKXAFJwsSReRUVGzFofeoHc5NRCaTtq9zg==",
+      "path": "sqlitepclraw.provider.e_sqlite3/2.1.6-pre20230809203314",
+      "hashPath": "sqlitepclraw.provider.e_sqlite3.2.1.6-pre20230809203314.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",

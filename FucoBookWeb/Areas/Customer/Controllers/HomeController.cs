@@ -1,6 +1,9 @@
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
+using FucoBook_Model.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
 
 namespace FucoBookWeb.Areas.Customer.Controllers
@@ -36,7 +39,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
 
         public IActionResult Details(int? id)
         {
-            Product p = _unitOfWork.Product.Get(u => u.Id == id, includeProperties:"Category");
+            Product p = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "Category");
             return View(p);
         }
     }
