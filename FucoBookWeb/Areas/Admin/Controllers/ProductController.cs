@@ -2,12 +2,15 @@
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
 using FucoBook_Model.ViewModels;
+using FucoBook_Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace FucoBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -21,7 +24,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         public IActionResult Index()
         {
             List<Product> lstProduct = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
-
+  
             return View(lstProduct);
         }
 
@@ -127,13 +130,12 @@ namespace FucoBookWeb.Areas.Admin.Controllers
             string wwwRootPath = _webHostEnvironment.WebRootPath;
             var oldImagePath = Path.Combine(wwwRootPath + productToBeDeleted.ImageUrl.TrimStart('\\'));
 
-            if(System.IO.File.Exists(oldImagePath))
+            if (System.IO.File.Exists(oldImagePath))
             {
                 System.IO.File.Delete(oldImagePath);
             }
             _unitOfWork.Product.Remove(productToBeDeleted);
             _unitOfWork.Save();
-
             return Json(new { success = true, message = "Product deleted successfully" });
         }
 

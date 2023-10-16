@@ -2,6 +2,7 @@ using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
 using FucoBook_Model.ViewModels;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
@@ -26,9 +27,24 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             return View(lstProduct);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Privacy(int ?id)
         {
-            return View();
+            ProductVM productVm = new()
+            {
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }),
+                Product = new Product()
+            };
+            if(id == 0 && id == null)
+            {
+                return View(productVm);
+            }
+            productVm.Product = _unitOfWork.Product.Get(u => u.Id == id);
+            productVm.Product = new Product();
+            return View(productVm);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

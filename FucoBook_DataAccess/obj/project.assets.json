@@ -368,6 +368,32 @@
           }
         }
       },
+      "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0-rc.1.23421.29"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ],
+        "build": {
+          "buildTransitive/Microsoft.AspNetCore.Identity.UI.targets": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/Microsoft.AspNetCore.Identity.UI.targets": {}
+        }
+      },
       "Microsoft.AspNetCore.JsonPatch/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -1115,20 +1141,45 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.Extensions.Primitives": "2.2.0"
+          "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
         },
         "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "related": ".xml"
           }
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "related": ".xml"
           }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/netstandard2.0/_._": {}
+        },
+        "buildMultiTargeting": {
+          "buildMultiTargeting/_._": {}
         }
       },
       "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
@@ -3410,6 +3461,9 @@
       "FucoBook_Utility/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "8.0.0-rc.1.23421.29"
+        },
         "compile": {
           "bin/placeholder/FucoBook_Utility.dll": {}
         },
@@ -3722,6 +3776,124 @@
         "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.identity.entityframeworkcore.8.0.0-rc.1.23421.29.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+      "sha512": "Je/XGkV3aQWC2st0tCLDYUg6bg/GZojdTneqXhCqWujsjpn5K2MeZj6fvbck6jKMnoxklA3XzgyzTltUZVofPw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.identity.ui/8.0.0-rc.1.23421.29",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/Microsoft.AspNetCore.Identity.UI.props",
+        "build/Microsoft.AspNetCore.Identity.UI.targets",
+        "build/Microsoft.AspNetCore.StaticWebAssets.V4.targets",
+        "build/Microsoft.AspNetCore.StaticWebAssets.V5.targets",
+        "build/Microsoft.AspNetCore.StaticWebAssets.targets",
+        "buildMultiTargeting/Microsoft.AspNetCore.Identity.UI.targets",
+        "buildTransitive/Microsoft.AspNetCore.Identity.UI.targets",
+        "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Identity.UI.xml",
+        "microsoft.aspnetcore.identity.ui.8.0.0-rc.1.23421.29.nupkg.sha512",
+        "microsoft.aspnetcore.identity.ui.nuspec",
+        "staticwebassets/V4/css/site.css",
+        "staticwebassets/V4/favicon.ico",
+        "staticwebassets/V4/js/site.js",
+        "staticwebassets/V4/lib/bootstrap/LICENSE",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-grid.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-reboot.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap.min.css",
+        "staticwebassets/V4/lib/bootstrap/dist/css/bootstrap.min.css.map",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.bundle.js",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.js",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.js.map",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.min.js",
+        "staticwebassets/V4/lib/bootstrap/dist/js/bootstrap.min.js.map",
+        "staticwebassets/V4/lib/jquery-validation-unobtrusive/LICENSE.txt",
+        "staticwebassets/V4/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+        "staticwebassets/V4/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+        "staticwebassets/V4/lib/jquery-validation/LICENSE.md",
+        "staticwebassets/V4/lib/jquery-validation/dist/additional-methods.js",
+        "staticwebassets/V4/lib/jquery-validation/dist/additional-methods.min.js",
+        "staticwebassets/V4/lib/jquery-validation/dist/jquery.validate.js",
+        "staticwebassets/V4/lib/jquery-validation/dist/jquery.validate.min.js",
+        "staticwebassets/V4/lib/jquery/LICENSE.txt",
+        "staticwebassets/V4/lib/jquery/dist/jquery.js",
+        "staticwebassets/V4/lib/jquery/dist/jquery.min.js",
+        "staticwebassets/V4/lib/jquery/dist/jquery.min.map",
+        "staticwebassets/V5/css/site.css",
+        "staticwebassets/V5/favicon.ico",
+        "staticwebassets/V5/js/site.js",
+        "staticwebassets/V5/lib/bootstrap/LICENSE",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.rtl.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.rtl.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-grid.rtl.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.rtl.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-reboot.rtl.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.rtl.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap-utilities.rtl.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.rtl.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.rtl.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.rtl.min.css",
+        "staticwebassets/V5/lib/bootstrap/dist/css/bootstrap.rtl.min.css.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.bundle.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.bundle.js.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.bundle.min.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.esm.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.esm.js.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.esm.min.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.esm.min.js.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.js.map",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.min.js",
+        "staticwebassets/V5/lib/bootstrap/dist/js/bootstrap.min.js.map",
+        "staticwebassets/V5/lib/jquery-validation-unobtrusive/LICENSE.txt",
+        "staticwebassets/V5/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js",
+        "staticwebassets/V5/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js",
+        "staticwebassets/V5/lib/jquery-validation/LICENSE.md",
+        "staticwebassets/V5/lib/jquery-validation/dist/additional-methods.js",
+        "staticwebassets/V5/lib/jquery-validation/dist/additional-methods.min.js",
+        "staticwebassets/V5/lib/jquery-validation/dist/jquery.validate.js",
+        "staticwebassets/V5/lib/jquery-validation/dist/jquery.validate.min.js",
+        "staticwebassets/V5/lib/jquery/LICENSE.txt",
+        "staticwebassets/V5/lib/jquery/dist/jquery.js",
+        "staticwebassets/V5/lib/jquery/dist/jquery.min.js",
+        "staticwebassets/V5/lib/jquery/dist/jquery.min.map"
       ]
     },
     "Microsoft.AspNetCore.JsonPatch/2.2.0": {
@@ -4744,17 +4916,54 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.FileProviders.Abstractions/2.2.0": {
-      "sha512": "EcnaSsPTqx2MGnHrmWOD0ugbuuqVT8iICqSqPzi45V5/MA1LjUNb0kwgcxBGqizV1R+WeBK7/Gw25Jzkyk9bIw==",
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
+      "sha512": "yFiU9oAF+abTk1gjMLrPRmzhz+ZJc0Q4S7NvK9EtzS0Sm1J8DcbzsRUi6r8eufvtmbGzk5KNPcpOo8ffAD9p0A==",
       "type": "package",
-      "path": "microsoft.extensions.fileproviders.abstractions/2.2.0",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0-rc.1.23419.4",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll",
         "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.xml",
-        "microsoft.extensions.fileproviders.abstractions.2.2.0.nupkg.sha512",
-        "microsoft.extensions.fileproviders.abstractions.nuspec"
+        "microsoft.extensions.fileproviders.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512",
+        "microsoft.extensions.fileproviders.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+      "sha512": "ODUTtJ9093Hk45xpxsGz3jTu+cX6jgbuCAyB5yxM3Hm5wiZl+TnDea5nHfe+AFt8M7sltBRcojFy2adMtdBvIA==",
+      "type": "package",
+      "path": "microsoft.extensions.fileproviders.embedded/8.0.0-rc.1.23421.29",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "build/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.props",
+        "build/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.targets",
+        "buildMultiTargeting/Microsoft.Extensions.FileProviders.Embedded.props",
+        "buildMultiTargeting/Microsoft.Extensions.FileProviders.Embedded.targets",
+        "lib/net462/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/net462/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/net8.0/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.xml",
+        "microsoft.extensions.fileproviders.embedded.8.0.0-rc.1.23421.29.nupkg.sha512",
+        "microsoft.extensions.fileproviders.embedded.nuspec",
+        "tasks/netstandard2.0/Microsoft.Extensions.FileProviders.Embedded.Manifest.Task.dll"
       ]
     },
     "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {

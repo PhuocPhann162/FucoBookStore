@@ -7,10 +7,85 @@
   "targets": {
     ".NETCoreApp,Version=v8.0": {
       "FucoBook_Utility/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Identity.UI": "8.0.0-rc.1.23421.29"
+        },
         "runtime": {
           "FucoBook_Utility.dll": {}
         }
-      }
+      },
+      "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.1.23421.29": {},
+      "Microsoft.AspNetCore.Cryptography.KeyDerivation/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.Internal": "8.0.0-rc.1.23421.29"
+        }
+      },
+      "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Embedded": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Identity.Stores": "8.0.0-rc.1.23421.29"
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Identity.UI.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.42129"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Abstractions/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0-rc.1.23419.4": {},
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.FileProviders.Abstractions": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Identity.Core/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Cryptography.KeyDerivation": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Logging": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Options": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Identity.Stores/8.0.0-rc.1.23421.29": {
+        "dependencies": {
+          "Microsoft.Extensions.Caching.Abstractions": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Identity.Core": "8.0.0-rc.1.23421.29",
+          "Microsoft.Extensions.Logging": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Logging/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Options": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Options/8.0.0-rc.1.23419.4": {
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.0-rc.1.23419.4",
+          "Microsoft.Extensions.Primitives": "8.0.0-rc.1.23419.4"
+        }
+      },
+      "Microsoft.Extensions.Primitives/8.0.0-rc.1.23419.4": {}
     }
   },
   "libraries": {
@@ -18,6 +93,104 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Cryptography.Internal/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-U31rfHMcngJbA1mFnGu9ybaOcLbS0fZOEwx5zCNoyTJTgPVXFVFtScXg7ITKG0r+rhJrrX5p9B3nKfyb7hUYQQ==",
+      "path": "microsoft.aspnetcore.cryptography.internal/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.cryptography.internal.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Cryptography.KeyDerivation/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCDKoulG704yBaPtEbVWpGCD71vui3yUhBEuuYCsY3CPc5cevlD/XBW3e0DvXX0kExT94HaVniHEThajFlmdsw==",
+      "path": "microsoft.aspnetcore.cryptography.keyderivation/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Identity.UI/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Je/XGkV3aQWC2st0tCLDYUg6bg/GZojdTneqXhCqWujsjpn5K2MeZj6fvbck6jKMnoxklA3XzgyzTltUZVofPw==",
+      "path": "microsoft.aspnetcore.identity.ui/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.aspnetcore.identity.ui.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Caching.Abstractions/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-wVXObG7/VU8jgxMjXITYdN4q5I7liiruSjJf6P3acmzcBqPgAf4SrPe4Sm5J2pFBoNM7o8sA3SxHpW/HJMs1EQ==",
+      "path": "microsoft.extensions.caching.abstractions/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.caching.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-q1M8U8Qhf0siOpZ0PRB7jZR8Um+Pnm4HgCL81hYDtIunWJmlqEGKjGWg/gl140K9imZUqLkePSVVQGlP7/Xo+A==",
+      "path": "microsoft.extensions.dependencyinjection/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.dependencyinjection.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-SAv6AcbXKzvBq4kQAU5S9sW3ZOV7j4qLjqT+Iw6CLgqsSCgoJhmVvadtr8PUWaRfj4uVT9CX5V3zIojehtMq8w==",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-yFiU9oAF+abTk1gjMLrPRmzhz+ZJc0Q4S7NvK9EtzS0Sm1J8DcbzsRUi6r8eufvtmbGzk5KNPcpOo8ffAD9p0A==",
+      "path": "microsoft.extensions.fileproviders.abstractions/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.fileproviders.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.FileProviders.Embedded/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ODUTtJ9093Hk45xpxsGz3jTu+cX6jgbuCAyB5yxM3Hm5wiZl+TnDea5nHfe+AFt8M7sltBRcojFy2adMtdBvIA==",
+      "path": "microsoft.extensions.fileproviders.embedded/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.fileproviders.embedded.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Core/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HeX6D7DmgL5Vr0ALN7MaCLaJqDL0PKVQ2KfRua48yyAtzIXY+63v7n7b5dxqptiI5j26QxyH9IAbty5WbHkcmA==",
+      "path": "microsoft.extensions.identity.core/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.identity.core.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Identity.Stores/8.0.0-rc.1.23421.29": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sMhDE+dH89Dr/yZCIOgOcLbMgiolp9dWvTtApccm5pbXrsw9akv/30dSYW0YYJpVUkDv0CaJpDS4L1ruIdjbVw==",
+      "path": "microsoft.extensions.identity.stores/8.0.0-rc.1.23421.29",
+      "hashPath": "microsoft.extensions.identity.stores.8.0.0-rc.1.23421.29.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n39LJSx0Mpl89hhT0DWTyPyGv/z60/Ygp0b4ZE1zNy9R8O42PrsK+XFdiaKtCnpOPezX2Jq07dFyZzpCqmIvzw==",
+      "path": "microsoft.extensions.logging/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.logging.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-jphvzZmIDCEwl5PkxegeiO0y+zeMRg92QtY0weVFy8tH9ySgb2EwX85B78H0FYTFixFApRlmsh/pEdEs+VKbZA==",
+      "path": "microsoft.extensions.logging.abstractions/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.logging.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Options/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fsKycFyh/aX7Vs9o/gOH+XBWRh5VB4iwV6xHZdvN9kDvJfBhCm2IQ/E+xaWa5KtX7tXOx0hclZ8ihK97ab3mPQ==",
+      "path": "microsoft.extensions.options/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.options.8.0.0-rc.1.23419.4.nupkg.sha512"
+    },
+    "Microsoft.Extensions.Primitives/8.0.0-rc.1.23419.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zyoB4zblhvpylS9VOmKyBuGH+RjKDsfi0cTB2KRPPDD6tFinpP+vGr3dictaNYLhGUg6jaBmq+2H/WZMCnvGDQ==",
+      "path": "microsoft.extensions.primitives/8.0.0-rc.1.23419.4",
+      "hashPath": "microsoft.extensions.primitives.8.0.0-rc.1.23419.4.nupkg.sha512"
     }
   }
 }

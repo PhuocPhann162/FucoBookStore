@@ -10,3 +10,4 @@ C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Utility\obj\Debug\net8.0\FucoBoo
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Utility\obj\Debug\net8.0\refint\FucoBook_Utility.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Utility\obj\Debug\net8.0\FucoBook_Utility.pdb
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Utility\obj\Debug\net8.0\ref\FucoBook_Utility.dll
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBook_Utility\obj\Debug\net8.0\FucoBook_Utility.csproj.AssemblyReference.cache

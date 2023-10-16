@@ -6,10 +6,10 @@ $(document).ready(function () {
 
 function loadDataTable() {
     dataTable = $('#tblData').DataTable({
-        "ajax": { url:'/admin/product/getall' },
+        "ajax": { url: '/admin/product/getall' },
         "columns": [
             { data: 'title', "width": "20%" },
-            { data: 'isbn', "width": "15%" }, 
+            { data: 'isbn', "width": "15%" },
             { data: 'listPrice', "width": "10%" },
             { data: 'author', "width": "20%" },
             { data: 'category.name', "width": "10%" },
@@ -24,7 +24,7 @@ function loadDataTable() {
                 "width": "25%"
             }
         ]
-    }); 
+    });
 }
 
 function Delete(url) {
@@ -43,10 +43,13 @@ function Delete(url) {
                 type: 'DELETE',
                 success: function (data) {
                     dataTable.ajax.reload();
-                    toastr.success(data.message); 
+                    toastr.success(data.message);
                 }
             })
         }
     })
 }
+
+
+
 

@@ -1,8 +1,23 @@
 {
   "version": 2,
-  "dgSpecHash": "fnmCyLsOqN5OhuCz9pmpvj2GPUfV27CjS4SFUY7ISEIy1TjhMat3DrZTBWFQgzuEGaafrnpLtg9DBMTdLqn46g==",
+  "dgSpecHash": "V1xy8s5TViXX5sqgrQOrQDwqPKgcD0Yp02zMTBGykZhahvLEYxrrevgLt9mhPhhaizqZmMiXavhymM+8QQWcFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBook_Utility\\FucoBook_Utility.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.cryptography.internal.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.cryptography.keyderivation.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.identity.ui.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0-rc.1.23419.4\\microsoft.extensions.caching.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0-rc.1.23419.4\\microsoft.extensions.dependencyinjection.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0-rc.1.23419.4\\microsoft.extensions.dependencyinjection.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.fileproviders.abstractions\\8.0.0-rc.1.23419.4\\microsoft.extensions.fileproviders.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.fileproviders.embedded\\8.0.0-rc.1.23421.29\\microsoft.extensions.fileproviders.embedded.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.identity.core\\8.0.0-rc.1.23421.29\\microsoft.extensions.identity.core.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.identity.stores\\8.0.0-rc.1.23421.29\\microsoft.extensions.identity.stores.8.0.0-rc.1.23421.29.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.logging\\8.0.0-rc.1.23419.4\\microsoft.extensions.logging.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0-rc.1.23419.4\\microsoft.extensions.logging.abstractions.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.options\\8.0.0-rc.1.23419.4\\microsoft.extensions.options.8.0.0-rc.1.23419.4.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0-rc.1.23419.4\\microsoft.extensions.primitives.8.0.0-rc.1.23419.4.nupkg.sha512"
+  ],
   "logs": []
 }

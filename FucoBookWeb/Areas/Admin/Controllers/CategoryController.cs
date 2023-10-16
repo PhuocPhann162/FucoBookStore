@@ -2,11 +2,14 @@
 using FucoBook_DataAccess.Data;
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
+using FucoBook_Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FucoBookWeb.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;

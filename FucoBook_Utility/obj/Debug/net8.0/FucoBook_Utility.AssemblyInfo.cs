@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FucoBook_Utility")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+965a1a52d7bf5416f020cdad4cdd602a4aa8ad2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e9e6c883f907b7a79b99638b4b84b4ab31dcb15f")]
 [assembly: System.Reflection.AssemblyProductAttribute("FucoBook_Utility")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FucoBook_Utility")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
