@@ -69,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\product\\fe1b73a0-9fb0-4084-afe0-ae97c120077d.jpg"
     },
     {
+      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\company.js",
+      "PackagePath": "staticwebassets\\js\\company.js"
+    },
+    {
       "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\product.js",
       "PackagePath": "staticwebassets\\js\\product.js"
     },

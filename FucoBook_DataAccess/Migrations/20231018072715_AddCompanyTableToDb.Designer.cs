@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FucoBook_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20231017143141_AddCompanyTableToDb")]
+    [Migration("20231018072715_AddCompanyTableToDb")]
     partial class AddCompanyTableToDb
     {
         /// <inheritdoc />
@@ -96,6 +96,38 @@ namespace FucoBook_DataAccess.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            City = "Da Nang",
+                            Name = "Fahasa",
+                            PhoneNumber = "0899229788",
+                            PostalCode = "VN123",
+                            State = "Tan Chinh",
+                            StreetAddress = "280 Le Duan"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            City = "Da Nang",
+                            Name = "Kim Dong",
+                            PhoneNumber = "0899229788",
+                            PostalCode = "VN123",
+                            State = "Tan Chinh",
+                            StreetAddress = "280 Le Duan"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            City = "Da Nang",
+                            Name = "Tuoi Tre",
+                            PhoneNumber = "0899229788",
+                            PostalCode = "VN123",
+                            State = "Tan Chinh",
+                            StreetAddress = "280 Le Duan"
+                        });
                 });
 
             modelBuilder.Entity("FucoBook_Model.Models.Product", b =>
