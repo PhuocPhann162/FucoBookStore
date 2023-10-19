@@ -1,11 +1,13 @@
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
 using FucoBook_Model.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace FucoBookWeb.Areas.Customer.Controllers
 {
@@ -27,36 +29,54 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             return View(lstProduct);
         }
 
-        public IActionResult Privacy(int ?id)
+        public IActionResult Details(int id)
         {
-            ProductVM productVm = new()
+            ShoppingCart cart = new()
             {
-                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
-                {
-                    Text = u.Name,
-                    Value = u.Id.ToString()
-                }),
-                Product = new Product()
+                Product = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "Category"),
+                Count = 1,
+                ProductId = id
             };
-            if(id == 0 && id == null)
-            {
-                return View(productVm);
-            }
-            productVm.Product = _unitOfWork.Product.Get(u => u.Id == id);
-            productVm.Product = new Product();
-            return View(productVm);
+
+            return View(cart);
+        }
+
+        [HttpPost]
+        [Authorize]
+        public IActionResult Details(ShoppingCart shoppingCart)
+        {
+            var claimsIdentity = (ClaimsIdentity)User.Identity;
+            var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+            shoppingCart.ApplicationUserId = userId;
+
+            _unitOfWork.ShoppingCart.Add(shoppingCart);
+            _unitOfWork.Save();
+
+            //ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
+            //u.ProductId == shoppingCart.ProductId);
+
+            //if(cartFromDb != null)
+            //{
+            //    cartFromDb.Count += shoppingCart.Count;
+            //    _unitOfWork.ShoppingCart.Update(cartFromDb);
+            //}
+            //else
+            //{
+            //    _unitOfWork.ShoppingCart.Add(shoppingCart);
+            //}
+            //_unitOfWork.Save();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }
-
-        public IActionResult Details(int? id)
-        {
-            Product p = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "Category");
-            return View(p);
         }
     }
 }

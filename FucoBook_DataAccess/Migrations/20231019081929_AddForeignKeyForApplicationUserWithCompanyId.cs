@@ -5,7 +5,7 @@
 namespace FucoBook_DataAccess.Migrations
 {
     /// <inheritdoc />
-    public partial class AddForeignKeyCompanyIdForRegister : Migration
+    public partial class AddForeignKeyForApplicationUserWithCompanyId : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

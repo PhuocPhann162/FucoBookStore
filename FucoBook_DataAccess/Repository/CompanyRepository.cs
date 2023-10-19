@@ -12,7 +12,7 @@ namespace FucoBook_DataAccess.Repository
     public class CompanyRepository : Repository<Company>, ICompanyRepository
     {
         private ApplicationDBContext _db;
-        public CompanyRepository(ApplicationDBContext db) : base(db) 
+        public CompanyRepository(ApplicationDBContext db) : base(db)
         {
             _db = db;
         }

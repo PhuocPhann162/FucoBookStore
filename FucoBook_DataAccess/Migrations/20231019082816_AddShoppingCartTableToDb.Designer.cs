@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FucoBook_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20231018135301_AddShoppingCartTableToDb")]
+    [Migration("20231019082816_AddShoppingCartTableToDb")]
     partial class AddShoppingCartTableToDb
     {
         /// <inheritdoc />

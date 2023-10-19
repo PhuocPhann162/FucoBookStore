@@ -39,7 +39,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
             }
         }
 
-        [HttpPost] 
+        [HttpPost]
         public IActionResult Upsert(Company companyObj)
         {
             if (ModelState.IsValid)

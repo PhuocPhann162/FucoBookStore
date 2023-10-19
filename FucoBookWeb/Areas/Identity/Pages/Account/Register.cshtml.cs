@@ -170,7 +170,7 @@ namespace FucoBookWeb.Areas.Identity.Pages.Account
                 user.PostalCode = Input.PostalCode;
                 user.PhoneNumber = Input.PhoneNumber;
 
-                if(Input.Role == SD.Role_Company)
+                if (Input.Role == SD.Role_Company)
                 {
                     user.CompanyId = Input.CompanyId;
                 }

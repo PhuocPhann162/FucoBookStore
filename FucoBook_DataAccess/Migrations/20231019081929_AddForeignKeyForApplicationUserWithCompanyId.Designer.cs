@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FucoBook_DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20231018072715_AddCompanyTableToDb")]
-    partial class AddCompanyTableToDb
+    [Migration("20231019081929_AddForeignKeyForApplicationUserWithCompanyId")]
+    partial class AddForeignKeyForApplicationUserWithCompanyId
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -101,32 +101,32 @@ namespace FucoBook_DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            City = "Da Nang",
-                            Name = "Fahasa",
-                            PhoneNumber = "0899229788",
-                            PostalCode = "VN123",
-                            State = "Tan Chinh",
-                            StreetAddress = "280 Le Duan"
+                            City = "Tech City",
+                            Name = "Tech Solution",
+                            PhoneNumber = "6662830341",
+                            PostalCode = "1212LD",
+                            State = "IL",
+                            StreetAddress = "123 Tech St"
                         },
                         new
                         {
                             Id = 2,
-                            City = "Da Nang",
-                            Name = "Kim Dong",
-                            PhoneNumber = "0899229788",
-                            PostalCode = "VN123",
-                            State = "Tan Chinh",
-                            StreetAddress = "280 Le Duan"
+                            City = "Vid City",
+                            Name = "Vivid Books",
+                            PhoneNumber = "7723435891",
+                            PostalCode = "6432SA",
+                            State = "IL",
+                            StreetAddress = "999 Vid St"
                         },
                         new
                         {
                             Id = 3,
-                            City = "Da Nang",
-                            Name = "Tuoi Tre",
-                            PhoneNumber = "0899229788",
-                            PostalCode = "VN123",
-                            State = "Tan Chinh",
-                            StreetAddress = "280 Le Duan"
+                            City = "Lala Land",
+                            Name = "Readers Club",
+                            PhoneNumber = "1113225784",
+                            PostalCode = "9928BU",
+                            State = "NY",
+                            StreetAddress = "222 Main St"
                         });
                 });
 
@@ -480,6 +480,10 @@ namespace FucoBook_DataAccess.Migrations
                     b.Property<string>("City")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -492,6 +496,8 @@ namespace FucoBook_DataAccess.Migrations
 
                     b.Property<string>("StreetAddress")
                         .HasColumnType("nvarchar(max)");
+
+                    b.HasIndex("CompanyId");
 
                     b.HasDiscriminator().HasValue("ApplicationUser");
                 });
@@ -556,6 +562,17 @@ namespace FucoBook_DataAccess.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("FucoBook_Model.ApplicationUser", b =>
+                {
+                    b.HasOne("FucoBook_Model.Models.Company", "Company")
+                        .WithMany()
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
                 });
 #pragma warning restore 612, 618
         }
