@@ -29,15 +29,14 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             return View(lstProduct);
         }
 
-        public IActionResult Details(int id)
+        public IActionResult Details(int productId)
         {
             ShoppingCart cart = new()
             {
-                Product = _unitOfWork.Product.Get(u => u.Id == id, includeProperties: "Category"),
+                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category"),
                 Count = 1,
-                ProductId = id
+                ProductId = productId
             };
-
             return View(cart);
         }
 
@@ -49,22 +48,24 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId = userId;
 
-            _unitOfWork.ShoppingCart.Add(shoppingCart);
-            _unitOfWork.Save();
+            ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
+            u.ProductId == shoppingCart.ProductId);
 
-            //ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
-            //u.ProductId == shoppingCart.ProductId);
-
-            //if(cartFromDb != null)
-            //{
-            //    cartFromDb.Count += shoppingCart.Count;
-            //    _unitOfWork.ShoppingCart.Update(cartFromDb);
-            //}
-            //else
-            //{
-            //    _unitOfWork.ShoppingCart.Add(shoppingCart);
-            //}
-            //_unitOfWork.Save();
+            if (cartFromDb != null)
+            {
+                // shopping cart exists
+                cartFromDb.Count += shoppingCart.Count;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+                _unitOfWork.Save();
+                TempData["success"] = "Shopping Cart updated successfully";
+            }
+            else
+            {
+                // add cart record
+                _unitOfWork.ShoppingCart.Add(shoppingCart);
+                _unitOfWork.Save();
+                TempData["success"] = "Shopping Cart added successfully";
+            }
             return RedirectToAction("Index");
         }
 
