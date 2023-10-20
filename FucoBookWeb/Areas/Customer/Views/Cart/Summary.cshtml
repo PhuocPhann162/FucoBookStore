@@ -30,7 +30,7 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.Name" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.Name" class="form-control" />
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -38,7 +38,7 @@
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.PhoneNumber" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.PhoneNumber" class="form-control" />
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -46,7 +46,7 @@
                                     <label>Street Address</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.StreetAddress" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.StreetAddress" class="form-control" />
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -54,7 +54,7 @@
                                     <label>City</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.City" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.City" class="form-control" />
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -62,7 +62,7 @@
                                     <label>State</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.State" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.State" class="form-control" />
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -70,7 +70,7 @@
                                     <label>Postal Code</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.ApplicationUser.PostalCode" class="form-control" />
+                                    <input value="@Model.OrderHeader.ApplicationUser.PostalCode" class="form-control" />
                                 </div>
                             </div>
                         </div>
@@ -87,26 +87,12 @@
                                             <h6 class="my-0">@cartItem.Product.Title</h6>
                                             <small class="text-muted">Quantity: @cartItem.Count</small>
                                         </div>
-                                        @if (cartItem.Count <= 50)
-                                        {
-                                            <span class="text-muted">@cartItem.Product.Price.ToString("c") * @cartItem.Count.ToString()</span>
-                                        }
-                                        else
-                                        {
-                                            if(cartItem.Count <= 100)
-                                            {
-                                                <span class="text-muted">@cartItem.Product.Price50.ToString("c") * @cartItem.Count.ToString()</span>
-                                            }
-                                            else
-                                            {
-                                                <span class="text-muted">@cartItem.Product.Price100.ToString("c") * @cartItem.Count.ToString()</span>
-                                            }
-                                        }
+                                        <span class="text-muted">@cartItem.Price.ToString("c") * @cartItem.Count.ToString()</span>
                                     </li>
                                 }
                                 <li class="list-group-item d-flex justify-content-between bg-light">
                                     <small class="text-info">Total (USD)</small>
-                                    <strong class="text-info">@Model.OrderTotal.ToString("c")</strong>
+                                    <strong class="text-info">@Model.OrderHeader.OrderTotal.ToString("c")</strong>
                                 </li>
                             </ul>
                         </div>
@@ -117,7 +103,7 @@
                 <div class="row">
                     <div class="col-12 col-md-8 pt-2">
                         <p style="color:maroon; font-size:14px;">
-                            Estimate Arrival Date: @Model.EstimateArrival
+                            Estimate Arrival Date:
                         </p>
                     </div>
                     <div class="col-12 col-md-4">

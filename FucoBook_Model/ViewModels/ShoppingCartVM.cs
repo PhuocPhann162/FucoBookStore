@@ -13,10 +13,7 @@ namespace FucoBook_Model.ViewModels
     {
         public IEnumerable<ShoppingCart> ShoppingCartList {  get; set; }
 
-        public double OrderTotal {  get; set; }
-
-        public ApplicationUser ApplicationUser { get; set; }
-
-        public DateTime EstimateArrival { get; set; }
+        public OrderHeader OrderHeader { get; set; }   
+        public OrderDetail OrderDetail { get; set; }   
     }
 }

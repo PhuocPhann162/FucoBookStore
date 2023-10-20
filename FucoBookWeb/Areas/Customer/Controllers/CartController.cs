@@ -27,16 +27,51 @@ namespace FucoBookWeb.Areas.Customer.Controllers
 
             ShoppingCartVM = new()
             {
-                ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product")
+                ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product"),
+                OrderHeader = new ()
             };
 
             foreach(var cart in ShoppingCartVM.ShoppingCartList)
             {
-                double price = GetPriceBasedOnQuantity(cart);
-                ShoppingCartVM.OrderTotal += (price * cart.Count);
+                cart.Price  = GetPriceBasedOnQuantity(cart);
+                ShoppingCartVM.OrderHeader.OrderTotal += (cart.Price * cart.Count);
             }
 
             return View(ShoppingCartVM);
+        }
+
+        public IActionResult Plus(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            cartFromDb.Count += 1;
+            _unitOfWork.ShoppingCart.Update(cartFromDb);
+            _unitOfWork.Save();
+
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Minus(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            if(cartFromDb.Count <= 1)
+            {
+                _unitOfWork.ShoppingCart.Remove(cartFromDb);
+            }
+            else
+            {
+                cartFromDb.Count -= 1;
+                _unitOfWork.ShoppingCart.Update(cartFromDb);
+            }
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult Remove(int cartId)
+        {
+            var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
+            _unitOfWork.ShoppingCart.Remove(cartFromDb);
+            _unitOfWork.Save();
+            return RedirectToAction(nameof(Index));
         }
 
         private double GetPriceBasedOnQuantity(ShoppingCart cart)
@@ -67,16 +102,15 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             ShoppingCartVM = new()
             {
                 ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product"),
-                ApplicationUser = userLogin
+                OrderHeader = new(), 
             };
+            ShoppingCartVM.OrderHeader.ApplicationUser = userLogin;
 
             foreach(var cartItem in  ShoppingCartVM.ShoppingCartList)
             {
-                double price = GetPriceBasedOnQuantity(cartItem);
-                ShoppingCartVM.OrderTotal += (price * cartItem.Count);
+                cartItem.Price = GetPriceBasedOnQuantity(cartItem);
+                ShoppingCartVM.OrderHeader.OrderTotal += (cartItem.Price * cartItem.Count);
             }
-
-            ShoppingCartVM.EstimateArrival = System.DateTime.Now;
 
             return View(ShoppingCartVM);
         }
