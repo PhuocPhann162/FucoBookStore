@@ -8,7 +8,7 @@
                 <div class="row px-4">
                     <div class="col-6">
                         <h5 class="pt-2 text-white">
-                            Shopping Cart
+                            Order Summary
                         </h5>
                     </div>
                     <div class="col-6 text-end">
@@ -30,7 +30,8 @@
                                     <label>Name</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.Name" class="form-control" />
+                                    <input asp-for="OrderHeader.Name" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.Name" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -38,7 +39,8 @@
                                     <label>Phone</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.PhoneNumber" class="form-control" />
+                                    <input asp-for="OrderHeader.PhoneNumber" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.PhoneNumber" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -46,7 +48,8 @@
                                     <label>Street Address</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.StreetAddress" class="form-control" />
+                                    <input asp-for="OrderHeader.StreetAddress" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.StreetAddress" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -54,7 +57,8 @@
                                     <label>City</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.City" class="form-control" />
+                                    <input asp-for="OrderHeader.City" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.City" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -62,7 +66,8 @@
                                     <label>State</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.State" class="form-control" />
+                                    <input asp-for="OrderHeader.State" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.State" class="text-danger"></span>
                                 </div>
                             </div>
                             <div class="row my-1">
@@ -70,7 +75,8 @@
                                     <label>Postal Code</label>
                                 </div>
                                 <div class="col-9">
-                                    <input value="@Model.OrderHeader.ApplicationUser.PostalCode" class="form-control" />
+                                    <input asp-for="OrderHeader.PostalCode" class="form-control" />
+                                    <span asp-validation-for="OrderHeader.PostalCode" class="text-danger"></span>
                                 </div>
                             </div>
                         </div>
@@ -87,7 +93,7 @@
                                             <h6 class="my-0">@cartItem.Product.Title</h6>
                                             <small class="text-muted">Quantity: @cartItem.Count</small>
                                         </div>
-                                        <span class="text-muted">@cartItem.Price.ToString("c") * @cartItem.Count.ToString()</span>
+                                        <span class="text-muted">@((cartItem.Price * cartItem.Count).ToString("c"))</span>
                                     </li>
                                 }
                                 <li class="list-group-item d-flex justify-content-between bg-light">
@@ -104,6 +110,10 @@
                     <div class="col-12 col-md-8 pt-2">
                         <p style="color:maroon; font-size:14px;">
                             Estimate Arrival Date:
+                            @{
+                                System.Globalization.CultureInfo culture = new System.Globalization.CultureInfo("en-GB"); // Định dạng ngày thành "dd/MM/yyyy"
+                            }
+                            @DateTime.Now.AddDays(3).ToString("dd/MM/yyyy", culture) - @DateTime.Now.AddDays(7).ToString("dd/MM/yyyy", culture)
                         </p>
                     </div>
                     <div class="col-12 col-md-4">

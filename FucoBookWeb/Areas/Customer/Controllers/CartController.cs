@@ -71,7 +71,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             var cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.Id == cartId);
             _unitOfWork.ShoppingCart.Remove(cartFromDb);
             _unitOfWork.Save();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index");
         }
 
         private double GetPriceBasedOnQuantity(ShoppingCart cart)
@@ -97,22 +97,34 @@ namespace FucoBookWeb.Areas.Customer.Controllers
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
-            ApplicationUser userLogin = _unitOfWork.ApplicationUser.Get(u => u.Id == userId);
 
             ShoppingCartVM = new()
             {
                 ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId, includeProperties: "Product"),
                 OrderHeader = new(), 
             };
-            ShoppingCartVM.OrderHeader.ApplicationUser = userLogin;
+            ShoppingCartVM.OrderHeader.ApplicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId);
 
-            foreach(var cartItem in  ShoppingCartVM.ShoppingCartList)
+            ShoppingCartVM.OrderHeader.Name = ShoppingCartVM.OrderHeader.ApplicationUser.Name;
+            ShoppingCartVM.OrderHeader.PhoneNumber = ShoppingCartVM.OrderHeader.ApplicationUser.PhoneNumber;
+            ShoppingCartVM.OrderHeader.StreetAddress = ShoppingCartVM.OrderHeader.ApplicationUser.StreetAddress;
+            ShoppingCartVM.OrderHeader.City = ShoppingCartVM.OrderHeader.ApplicationUser.City;
+            ShoppingCartVM.OrderHeader.State = ShoppingCartVM.OrderHeader.ApplicationUser.State;
+            ShoppingCartVM.OrderHeader.PostalCode = ShoppingCartVM.OrderHeader.ApplicationUser.PostalCode;
+
+            foreach (var cartItem in  ShoppingCartVM.ShoppingCartList)
             {
                 cartItem.Price = GetPriceBasedOnQuantity(cartItem);
                 ShoppingCartVM.OrderHeader.OrderTotal += (cartItem.Price * cartItem.Count);
             }
 
             return View(ShoppingCartVM);
+        }
+
+        [HttpPost]
+        public IActionResult Summary(ShoppingCartVM cartVM)
+        {
+            return View();
         }
     }
 }
