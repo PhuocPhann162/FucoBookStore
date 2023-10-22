@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "NOvKVhsPrcUZRm661X3L00qYCAdT8VdwA44xSK+3Xjf05v9GecKHW8/p86X73I1vcINvxlBKxHtBD1l/OVR/kg==",
+  "dgSpecHash": "sOohTzuRZTMDqhxm+NhIJXuReZVPPFHpHdyaQaGsttug/f7Ji+6m3UQevDsrp9Zi2i29/+4mG2pR/vAWRxiDVQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\FucoBookWeb.csproj",
   "expectedPackageFiles": [
@@ -190,6 +190,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\sqlitepclraw.core\\2.1.6-pre20230809203314\\sqlitepclraw.core.2.1.6-pre20230809203314.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\sqlitepclraw.lib.e_sqlite3\\2.1.6-pre20230809203314\\sqlitepclraw.lib.e_sqlite3.2.1.6-pre20230809203314.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\sqlitepclraw.provider.e_sqlite3\\2.1.6-pre20230809203314\\sqlitepclraw.provider.e_sqlite3.2.1.6-pre20230809203314.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\stripe.net\\43.0.0\\stripe.net.43.0.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\system.buffers\\4.5.0\\system.buffers.4.5.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\system.codedom\\4.4.0\\system.codedom.4.4.0.nupkg.sha512",
