@@ -66,7 +66,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
                 _unitOfWork.Save();
                 TempData["success"] = "Shopping Cart added successfully";
             }
-            return RedirectToAction("Index");
+            return RedirectToAction(nameof(Index));
         }
 
         public IActionResult Privacy()

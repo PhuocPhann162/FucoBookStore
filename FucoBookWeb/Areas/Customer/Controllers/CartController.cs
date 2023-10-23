@@ -218,7 +218,6 @@ namespace FucoBookWeb.Areas.Customer.Controllers
                 Response.Headers.Add("Location", session.Url);
                 return new StatusCodeResult(303);
             }
-
             return RedirectToAction(nameof(OrderConfirmation), new { id = ShoppingCartVM.OrderHeader.Id });
         }
 
@@ -238,7 +237,6 @@ namespace FucoBookWeb.Areas.Customer.Controllers
                     _unitOfWork.Save();
                 }
             }
-
             List<ShoppingCart> shoppingCarts = _unitOfWork.ShoppingCart
                 .GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
 
