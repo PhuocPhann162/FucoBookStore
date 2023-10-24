@@ -7,15 +7,15 @@ $(document).ready(function () {
         loadDataTable("inprocess");
     }
     else {
-        if (url.includes("pending")) {
-            loadDataTable("pending");
+        if (url.includes("completed")) {
+            loadDataTable("completed");
         }
         else {
-            if (url.includes("completed")) {
-                loadDataTable("completed");
+            if (url.includes("pending")) {
+                loadDataTable("pending");
             }
             else {
-                if (url.include("approved")) {
+                if (url.includes("approved")) {
                     loadDataTable("approved");
                 }
                 else {
@@ -31,11 +31,18 @@ function loadDataTable(status) {
         "ajax": { url: '/admin/order/getall?status=' + status },
         "columns": [
             { data: 'id', "width": "5%" },
-            { data: 'name', "width": "15%" },
+            { data: 'name', "width": "20%" },
             { data: 'phoneNumber', "width": "20%" },
-            { data: 'applicationUser.email', "width": "15%" },
+            { data: 'applicationUser.email', "width": "20%" },
             { data: 'orderStatus', "width": "15%" },
-            { data: 'orderTotal', "width": "10%" },
+            {
+                data: 'orderTotal',
+                "render": function (data) {
+                    var formattedTotal = data.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+                    return formattedTotal;
+                },
+                "width": "10%"
+            },
             {
                 data: 'id',
                 "render": function (data) {
@@ -43,7 +50,7 @@ function loadDataTable(status) {
                     <a href="/admin/order/details?orderId=${data}" class="btn btn-info mx-2"> <i class="bi bi-pencil-square"></i></a>
                     </div>`
                 },
-                "width": "20%"
+                "width": "10%"
             }
         ]
     });
