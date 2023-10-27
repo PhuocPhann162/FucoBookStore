@@ -1,6 +1,7 @@
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
 using FucoBook_Model.ViewModels;
+using FucoBook_Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor.Infrastructure;
@@ -48,6 +49,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId = userId;
 
+
             ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
             u.ProductId == shoppingCart.ProductId);
 
@@ -57,15 +59,18 @@ namespace FucoBookWeb.Areas.Customer.Controllers
                 cartFromDb.Count += shoppingCart.Count;
                 _unitOfWork.ShoppingCart.Update(cartFromDb);
                 _unitOfWork.Save();
-                TempData["success"] = "Shopping Cart updated successfully";
+
             }
             else
             {
                 // add cart record
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
                 _unitOfWork.Save();
-                TempData["success"] = "Shopping Cart added successfully";
+
+                HttpContext.Session.SetInt32(SD.SessionCart,
+                    _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
             }
+            TempData["success"] = "Shopping Cart updated successfully";
             return RedirectToAction(nameof(Index));
         }
 
