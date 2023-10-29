@@ -86,6 +86,7 @@ namespace FucoBookWeb.Areas.Identity.Pages.Account
             [Required]
             [EmailAddress]
             public string Email { get; set; }
+            // add Facebook Login properties
             [Required]
             public string Name { get; set; }
             public string? StreetAddress { get; set; }

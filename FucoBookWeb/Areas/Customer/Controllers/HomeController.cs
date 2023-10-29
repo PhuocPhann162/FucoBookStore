@@ -1,3 +1,4 @@
+using FucoBook_DataAccess.Data;
 using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model.Models;
 using FucoBook_Model.ViewModels;
@@ -18,7 +19,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly IUnitOfWork _unitOfWork;
 
-        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork, ApplicationDBContext db)
         {
             _logger = logger;
             _unitOfWork = unitOfWork;
@@ -48,7 +49,6 @@ namespace FucoBookWeb.Areas.Customer.Controllers
             var claimsIdentity = (ClaimsIdentity)User.Identity;
             var userId = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
             shoppingCart.ApplicationUserId = userId;
-
 
             ShoppingCart cartFromDb = _unitOfWork.ShoppingCart.Get(u => u.ApplicationUserId == userId &&
             u.ProductId == shoppingCart.ProductId);
