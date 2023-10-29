@@ -9,6 +9,7 @@ C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\FucoBookWeb.
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Azure.Identity.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Humanizer.dll
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Facebook.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.UI.dll
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll

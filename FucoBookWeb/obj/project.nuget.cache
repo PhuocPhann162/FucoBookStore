@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "sOohTzuRZTMDqhxm+NhIJXuReZVPPFHpHdyaQaGsttug/f7Ji+6m3UQevDsrp9Zi2i29/+4mG2pR/vAWRxiDVQ==",
+  "dgSpecHash": "OzD6iLW6ZLuTnXXTqlUxws2UhVkamNsgF3QQ8+FvDp4xbv1mQRXt3ypr0Vl2RuWOU4O0zvA1bEoPaG3G6vXWqA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\FucoBookWeb.csproj",
   "expectedPackageFiles": [
@@ -59,6 +59,7 @@
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
+    "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authentication.facebook\\8.0.0-rc.2.23480.2\\microsoft.aspnetcore.authentication.facebook.8.0.0-rc.2.23480.2.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authorization\\2.2.0\\microsoft.aspnetcore.authorization.2.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.authorization.policy\\2.2.0\\microsoft.aspnetcore.authorization.policy.2.2.0.nupkg.sha512",
     "C:\\Users\\Asus\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.0-rc.1.23421.29\\microsoft.aspnetcore.cryptography.internal.8.0.0-rc.1.23421.29.nupkg.sha512",
