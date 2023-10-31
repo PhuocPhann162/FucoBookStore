@@ -117,6 +117,10 @@
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
+      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\user.js",
+      "PackagePath": "staticwebassets\\js\\user.js"
+    },
+    {
       "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
