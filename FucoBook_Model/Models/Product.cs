@@ -49,8 +49,7 @@ namespace FucoBook_Model.Models
         [ValidateNever]
         public Category Category { get; set; }
 
-        [Required]
         [ValidateNever]
-        public string ImageUrl { get; set; }
+        public List<ProductImage> ProductImages { get; set; }
     }
 }

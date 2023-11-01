@@ -40,7 +40,6 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                     Value = i.Id.ToString()
                 })
             };
-
             roleVM.ApplicationUser.Role = _db.Roles.FirstOrDefault(u => u.Id == RoleId).Name;
             
             return View(roleVM);
