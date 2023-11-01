@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="/images/book.png" style="width: 30px"/>
+                    <img src="/images/book.png" style="width: 30px" />
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -84,16 +84,18 @@
             Make with <i class="bi bi-android2"></i> by PhuocPhan
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-
     <script src="//cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js" asp-append-version="true"></script>
-    <script src="https://cdn.tiny.cloud/1/4fjnu2yb8nkbm5zu7igdbp9kbr8cr2sfi2n9l7lrcp2x3cv7/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script src="https://cdn.tiny.cloud/1/4fjnu2yb8nkbm5zu7igdbp9kbr8cr2sfi2n9l7lrcp2x3cv7/tinymce/6/tinymce.min.js" referrerpolicy="origin">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

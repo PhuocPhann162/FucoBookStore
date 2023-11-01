@@ -1,5 +1,6 @@
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\appsettings.json
+C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\appsettings.Production.json
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\FucoBookWeb.staticwebassets.runtime.json
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\FucoBookWeb.exe
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\FucoBookWeb.deps.json
@@ -289,4 +290,3 @@ C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\obj\Debug\net8.0\refint\FucoB
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\obj\Debug\net8.0\FucoBookWeb.pdb
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\obj\Debug\net8.0\FucoBookWeb.genruntimeconfig.cache
 C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\obj\Debug\net8.0\ref\FucoBookWeb.dll
-C:\Users\Asus\source\repos\ASPNET\Fuco\FucoBookWeb\bin\Debug\net8.0\appsettings.Production.json
