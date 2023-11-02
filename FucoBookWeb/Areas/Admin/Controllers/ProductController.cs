@@ -7,6 +7,7 @@ using FucoBook_Utility;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 
 namespace FucoBookWeb.Areas.Admin.Controllers
 {
@@ -104,8 +105,8 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                         productVM.Product.ProductImages.Add(productImage);
                     }
                     _unitOfWork.Product.Update(productVM.Product);
-                    _unitOfWork.Save();
                 }
+                _unitOfWork.Save();
                 TempData["success"] = "Product created/updated successfully";
 
                 return RedirectToAction("Index", "Product");
@@ -119,6 +120,30 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                 });
                 return View(productVM);
             }
+        }
+
+        public IActionResult DeleteImage(int imageId)
+        {
+            var imageToBeDeleted = _unitOfWork.ProductImage.Get(u => u.Id == imageId);
+            var productId = imageToBeDeleted.ProductId;
+
+            if(imageToBeDeleted != null)
+            {
+                if(!string.IsNullOrEmpty(imageToBeDeleted.ImageUrl))
+                {
+                    var oldImagePath = Path.Combine(_webHostEnvironment.WebRootPath, imageToBeDeleted.ImageUrl);
+                    if(System.IO.File.Exists(oldImagePath))
+                    {
+                        System.IO.File.Delete(oldImagePath);
+                    }
+                }
+
+                _unitOfWork.ProductImage.Remove(imageToBeDeleted);
+                _unitOfWork.Save();
+                TempData["success"] = "Deleted Image Successfully";
+            }
+
+            return RedirectToAction(nameof(Upsert), new { id = productId });
         }
 
         #region API CALLS
@@ -138,13 +163,20 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                 return Json(new { success = false, message = "Error while deleting" });
             }
 
-            string wwwRootPath = _webHostEnvironment.WebRootPath;
-            //var oldImagePath = Path.Combine(wwwRootPath + productToBeDeleted.ImageUrl.TrimStart('\\'));
+            string productPath = @"\images\products\product-" + id;
+            string finalPath = Path.Combine(_webHostEnvironment.WebRootPath, productPath);
 
-            //if (System.IO.File.Exists(oldImagePath))
-            //{
-            //    System.IO.File.Delete(oldImagePath);
-            //}
+            if(Directory.Exists(finalPath))
+            {
+                string[] filePaths = Directory.GetFiles(finalPath);
+                foreach(string filePath in filePaths)
+                {
+                    System.IO.File.Delete(filePath);
+                }
+
+                Directory.Delete(finalPath);
+            }
+
             _unitOfWork.Product.Remove(productToBeDeleted);
             _unitOfWork.Save();
             return Json(new { success = true, message = "Product deleted successfully" });
