@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "UGzK9B2KECpizgoasKM+ZExyeJ1BpKHgF012Hd/PGa0=",
+  "Hash": "rLRMN3u14/M8iSLv+yZz2hWoCCfriGP0e42/ZfiCBtA=",
   "Source": "FucoBookWeb",
   "BasePath": "_content/FucoBookWeb",
   "Mode": "Default",
@@ -1689,12 +1689,12 @@
       "OriginalItemSpec": "wwwroot\\images\\products\\product-1\\5ec9eaa9-5e7e-454e-9d7d-ab5bb3ae8eb1.jpg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-4\\6f70a21b-96fb-457c-9d92-3bd17ccade5c.jpg",
+      "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-11\\5c3cc2a1-e476-4561-94ba-e843cb7ee17a.jpg",
       "SourceId": "FucoBookWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\",
       "BasePath": "_content/FucoBookWeb",
-      "RelativePath": "images/products/product-4/6f70a21b-96fb-457c-9d92-3bd17ccade5c.jpg",
+      "RelativePath": "images/products/product-11/5c3cc2a1-e476-4561-94ba-e843cb7ee17a.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1705,15 +1705,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\product-4\\6f70a21b-96fb-457c-9d92-3bd17ccade5c.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\products\\product-11\\5c3cc2a1-e476-4561-94ba-e843cb7ee17a.jpg"
     },
     {
-      "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-4\\d035312c-e6eb-4e3c-ab19-eaa3fd8010b3.jpg",
+      "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-11\\a864d909-1d8e-4dd5-bfa6-aabdb3accd23.jpg",
       "SourceId": "FucoBookWeb",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\",
       "BasePath": "_content/FucoBookWeb",
-      "RelativePath": "images/products/product-4/d035312c-e6eb-4e3c-ab19-eaa3fd8010b3.jpg",
+      "RelativePath": "images/products/product-11/a864d909-1d8e-4dd5-bfa6-aabdb3accd23.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -1724,7 +1724,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\images\\products\\product-4\\d035312c-e6eb-4e3c-ab19-eaa3fd8010b3.jpg"
+      "OriginalItemSpec": "wwwroot\\images\\products\\product-11\\a864d909-1d8e-4dd5-bfa6-aabdb3accd23.jpg"
     },
     {
       "Identity": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\company.js",

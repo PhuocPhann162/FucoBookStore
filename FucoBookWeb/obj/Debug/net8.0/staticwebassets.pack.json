@@ -101,20 +101,20 @@
       "PackagePath": "staticwebassets\\images\\product\\fe1b73a0-9fb0-4084-afe0-ae97c120077d.jpg"
     },
     {
+      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-11\\5c3cc2a1-e476-4561-94ba-e843cb7ee17a.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\product-11\\5c3cc2a1-e476-4561-94ba-e843cb7ee17a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-11\\a864d909-1d8e-4dd5-bfa6-aabdb3accd23.jpg",
+      "PackagePath": "staticwebassets\\images\\products\\product-11\\a864d909-1d8e-4dd5-bfa6-aabdb3accd23.jpg"
+    },
+    {
       "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-1\\292fe0b0-e56e-4afe-be9d-45f3ed9b14dc.jpg",
       "PackagePath": "staticwebassets\\images\\products\\product-1\\292fe0b0-e56e-4afe-be9d-45f3ed9b14dc.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-1\\5ec9eaa9-5e7e-454e-9d7d-ab5bb3ae8eb1.jpg",
       "PackagePath": "staticwebassets\\images\\products\\product-1\\5ec9eaa9-5e7e-454e-9d7d-ab5bb3ae8eb1.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-4\\6f70a21b-96fb-457c-9d92-3bd17ccade5c.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\product-4\\6f70a21b-96fb-457c-9d92-3bd17ccade5c.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\images\\products\\product-4\\d035312c-e6eb-4e3c-ab19-eaa3fd8010b3.jpg",
-      "PackagePath": "staticwebassets\\images\\products\\product-4\\d035312c-e6eb-4e3c-ab19-eaa3fd8010b3.jpg"
     },
     {
       "Id": "C:\\Users\\Asus\\source\\repos\\ASPNET\\Fuco\\FucoBookWeb\\wwwroot\\js\\company.js",
