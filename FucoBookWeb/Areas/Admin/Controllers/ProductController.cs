@@ -26,7 +26,6 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         public IActionResult Index()
         {
             List<Product> lstProduct = _unitOfWork.Product.GetAll(includeProperties: "Category").ToList();
-  
             return View(lstProduct);
         }
 

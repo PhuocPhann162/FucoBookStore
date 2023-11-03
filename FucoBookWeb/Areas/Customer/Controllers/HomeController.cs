@@ -27,7 +27,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Product> lstProduct = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            IEnumerable<Product> lstProduct = _unitOfWork.Product.GetAll(includeProperties: "Category,ProductImages");
             return View(lstProduct);
         }
 
@@ -35,7 +35,7 @@ namespace FucoBookWeb.Areas.Customer.Controllers
         {
             ShoppingCart cart = new()
             {
-                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category"),
+                Product = _unitOfWork.Product.Get(u => u.Id == productId, includeProperties: "Category,ProductImages"),
                 Count = 1,
                 ProductId = productId
             };
@@ -59,7 +59,6 @@ namespace FucoBookWeb.Areas.Customer.Controllers
                 cartFromDb.Count += shoppingCart.Count;
                 _unitOfWork.ShoppingCart.Update(cartFromDb);
                 _unitOfWork.Save();
-
             }
             else
             {
