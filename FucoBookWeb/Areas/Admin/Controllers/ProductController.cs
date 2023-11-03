@@ -71,6 +71,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                 {
                     _unitOfWork.Product.Add(productVM.Product);
                 }
+                _unitOfWork.Save();
 
                 string wwwRootPath = _webHostEnvironment.WebRootPath;
                 if (files != null)
@@ -105,8 +106,8 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                         productVM.Product.ProductImages.Add(productImage);
                     }
                     _unitOfWork.Product.Update(productVM.Product);
+                    _unitOfWork.Save();
                 }
-                _unitOfWork.Save();
                 TempData["success"] = "Product created/updated successfully";
 
                 return RedirectToAction("Index", "Product");
