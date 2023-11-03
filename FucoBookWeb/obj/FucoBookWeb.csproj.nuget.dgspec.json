@@ -48,6 +48,10 @@
               "target": "Package",
               "version": "[8.0.0-rc.2.23480.2, )"
             },
+            "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
+              "target": "Package",
+              "version": "[8.0.0-rc.2.23480.2, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.0-rc.1.23421.29, )"

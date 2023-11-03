@@ -10,6 +10,7 @@
         "dependencies": {
           "FucoBook_DataAccess": "1.0.0",
           "Microsoft.AspNetCore.Authentication.Facebook": "8.0.0-rc.2.23480.2",
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": "8.0.0-rc.2.23480.2",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "8.0.0-rc.1.23421.29",
           "Microsoft.AspNetCore.Identity.UI": "8.0.0-rc.1.23421.29",
           "Microsoft.EntityFrameworkCore": "8.0.0-rc.1.23419.6",
@@ -623,6 +624,14 @@
       "Microsoft.AspNetCore.Authentication.Facebook/8.0.0-rc.2.23480.2": {
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.48002"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.0-rc.2.23480.2": {
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
             "assemblyVersion": "8.0.0.0",
             "fileVersion": "8.0.23.48002"
           }
@@ -3392,6 +3401,13 @@
       "sha512": "sha512-Tyxo2LTeHj6glF0fYQKffgTFD3yd39193BK4HiH2icdnZB3a0vmR3LZq3OyQ97bVJpTz5lHi00NT63Dlhydfgg==",
       "path": "microsoft.aspnetcore.authentication.facebook/8.0.0-rc.2.23480.2",
       "hashPath": "microsoft.aspnetcore.authentication.facebook.8.0.0-rc.2.23480.2.nupkg.sha512"
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.0-rc.2.23480.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-u8o1dKLBKdC/QNHU7tgLOJnY2vsqlYxv/PQXp2v7fJk/DbWTxgEY/hSzmkTsYwznn/1YASk+drEGN+Kdi10Bhg==",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/8.0.0-rc.2.23480.2",
+      "hashPath": "microsoft.aspnetcore.authentication.microsoftaccount.8.0.0-rc.2.23480.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
       "type": "package",

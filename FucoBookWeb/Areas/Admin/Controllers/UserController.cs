@@ -1,4 +1,5 @@
 ﻿using FucoBook_DataAccess.Data;
+using FucoBook_DataAccess.Repository.IRepository;
 using FucoBook_Model;
 using FucoBook_Model.ViewModels;
 using FucoBook_Utility;
@@ -14,12 +15,14 @@ namespace FucoBookWeb.Areas.Admin.Controllers
     [Authorize(Roles = SD.Role_Admin)]
     public class UserController : Controller
     {
-        private readonly ApplicationDBContext _db;
         private readonly UserManager<IdentityUser> _userManager;
-        public UserController(ApplicationDBContext db, UserManager<IdentityUser> userManager)
+        private readonly RoleManager<IdentityRole> _roleManager;
+        private readonly IUnitOfWork _unitOfWork;
+        public UserController(IUnitOfWork unitOfWork, UserManager<IdentityUser> userManager, RoleManager<IdentityRole> roleManager)
         {
-            _db = db;
+            _unitOfWork = unitOfWork;
             _userManager = userManager;
+            _roleManager = roleManager;
         }
         public IActionResult Index()
         {
@@ -28,19 +31,19 @@ namespace FucoBookWeb.Areas.Admin.Controllers
 
         public IActionResult RoleManagement(string userId)
         {
-            string RoleId = _db.UserRoles.FirstOrDefault(u => u.UserId == userId).RoleId; 
             RoleManagementVM roleVM = new RoleManagementVM() {
-                ApplicationUser = _db.ApplicationUsers.Include(u => u.Company).FirstOrDefault(u => u.Id == userId),
-                RoleList = _db.Roles.Select(i => new SelectListItem {
+                ApplicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == userId, includeProperties: "Company"),
+                RoleList = _roleManager.Roles.Select(i => new SelectListItem {
                     Text = i.Name,
                     Value = i.Name
                 }),
-                CompanyList = _db.Companies.Select(i => new SelectListItem {
+                CompanyList = _unitOfWork.Company.GetAll().Select(i => new SelectListItem {
                     Text = i.Name, 
                     Value = i.Id.ToString()
                 })
             };
-            roleVM.ApplicationUser.Role = _db.Roles.FirstOrDefault(u => u.Id == RoleId).Name;
+            roleVM.ApplicationUser.Role = _userManager.GetRolesAsync(_unitOfWork.ApplicationUser.Get(u => u.Id == userId))
+                .GetAwaiter().GetResult().FirstOrDefault();
             
             return View(roleVM);
         }
@@ -48,10 +51,10 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult RoleManagement(RoleManagementVM RoleVM)
         {
-            var RoleId = _db.UserRoles.FirstOrDefault(u => u.UserId == RoleVM.ApplicationUser.Id).RoleId;
-            var oldRole = _db.Roles.FirstOrDefault(u => u.Id == RoleId).Name;
+            var oldRole = _userManager.GetRolesAsync(_unitOfWork.ApplicationUser.Get(u => u.Id == RoleVM.ApplicationUser.Id))
+                .GetAwaiter().GetResult().FirstOrDefault();
 
-            ApplicationUser applicationUser = _db.ApplicationUsers.FirstOrDefault(u => u.Id == RoleVM.ApplicationUser.Id);
+            ApplicationUser applicationUser = _unitOfWork.ApplicationUser.Get(u => u.Id == RoleVM.ApplicationUser.Id);
             if (!(RoleVM.ApplicationUser.Role == oldRole))
             {
                 // a role was updated
@@ -63,19 +66,23 @@ namespace FucoBookWeb.Areas.Admin.Controllers
                 {
                     applicationUser.CompanyId = null;
                 }
-                _db.SaveChanges();
+                _unitOfWork.ApplicationUser.Update(applicationUser);
+                _unitOfWork.Save();
 
                 _userManager.RemoveFromRoleAsync(applicationUser, oldRole).GetAwaiter().GetResult();
                 _userManager.AddToRoleAsync(applicationUser, RoleVM.ApplicationUser.Role).GetAwaiter().GetResult();
             }
             else
             {
-                if (RoleVM.ApplicationUser.Role == SD.Role_Company)
+                if (oldRole == SD.Role_Company && applicationUser.CompanyId != RoleVM.ApplicationUser.CompanyId)
                 {
                     applicationUser.CompanyId = RoleVM.ApplicationUser.CompanyId;
-                    _db.SaveChanges();
+                    _unitOfWork.ApplicationUser.Update(applicationUser);
+                    _unitOfWork.Save();
                 }
             }
+
+            TempData["success"] = "Set role for this account successfully";
 
             return RedirectToAction(nameof(Index));
         }
@@ -84,15 +91,12 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
-            List<ApplicationUser> objUserList = _db.ApplicationUsers.Include(u => u.Company).ToList();
+            List<ApplicationUser> objUserList = _unitOfWork.ApplicationUser.GetAll(includeProperties: "Company").ToList();
 
-            var userRoles = _db.UserRoles.ToList();
-            var roles = _db.Roles.ToList();
 
             foreach (var user in objUserList)
             {
-                var roleId = userRoles.FirstOrDefault(u => u.UserId == user.Id).RoleId;
-                user.Role = roles.FirstOrDefault(u => u.Id == roleId).Name;
+                user.Role = _userManager.GetRolesAsync(user).GetAwaiter().GetResult().FirstOrDefault();
 
                 if (user.Company == null)
                 {
@@ -106,7 +110,7 @@ namespace FucoBookWeb.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult LockUnlock([FromBody] string? id)
         {
-            var userFromDb = _db.ApplicationUsers.FirstOrDefault(u => u.Id == id);
+            var userFromDb = _unitOfWork.ApplicationUser.Get(u => u.Id == id);
             if (userFromDb == null)
             {
                 return Json(new { sucess = false, message = "Error while Locking/Unlocking" });
@@ -115,13 +119,15 @@ namespace FucoBookWeb.Areas.Admin.Controllers
             {
                 // user is currently locked and we need to unlock them 
                 userFromDb.LockoutEnd = DateTime.Now;
-                _db.SaveChanges();
+                _unitOfWork.ApplicationUser.Update(userFromDb);
+                _unitOfWork.Save();
                 return Json(new { success = true, message = "Unlock this user successfully" });
             }
             else
             {
                 userFromDb.LockoutEnd = DateTime.Now.AddYears(1000);
-                _db.SaveChanges();
+                _unitOfWork.ApplicationUser.Update(userFromDb);
+                _unitOfWork.Save();
                 return Json(new { success = true, message = "Lock this user successfully" });
             }
         }

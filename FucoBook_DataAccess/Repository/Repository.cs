@@ -22,11 +22,6 @@ namespace FucoBook_DataAccess.Repository
             _db.Products.Include(u => u.Category).Include(u => u.CategoryId);
         }
 
-        public void Add(T entity)
-        {
-            dbSet.Add(entity);
-        }
-
         public T Get(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = false)
         {
             IQueryable<T> query;
@@ -69,6 +64,11 @@ namespace FucoBook_DataAccess.Repository
             }
 
             return query.ToList();
+        }
+
+        public void Add(T entity)
+        {
+            dbSet.Add(entity);
         }
 
         public void Remove(T entity)

@@ -712,6 +712,22 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.0-rc.2.23480.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
         "type": "package",
         "dependencies": {
@@ -5774,6 +5790,21 @@
         "lib/net8.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
         "microsoft.aspnetcore.authentication.facebook.8.0.0-rc.2.23480.2.nupkg.sha512",
         "microsoft.aspnetcore.authentication.facebook.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.MicrosoftAccount/8.0.0-rc.2.23480.2": {
+      "sha512": "u8o1dKLBKdC/QNHU7tgLOJnY2vsqlYxv/PQXp2v7fJk/DbWTxgEY/hSzmkTsYwznn/1YASk+drEGN+Kdi10Bhg==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.microsoftaccount/8.0.0-rc.2.23480.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.dll",
+        "lib/net8.0/Microsoft.AspNetCore.Authentication.MicrosoftAccount.xml",
+        "microsoft.aspnetcore.authentication.microsoftaccount.8.0.0-rc.2.23480.2.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.microsoftaccount.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -13464,6 +13495,7 @@
     "net8.0": [
       "FucoBook_DataAccess >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.Facebook >= 8.0.0-rc.2.23480.2",
+      "Microsoft.AspNetCore.Authentication.MicrosoftAccount >= 8.0.0-rc.2.23480.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.0-rc.1.23421.29",
       "Microsoft.AspNetCore.Identity.UI >= 8.0.0-rc.1.23421.29",
       "Microsoft.EntityFrameworkCore >= 8.0.0-rc.1.23419.6",
@@ -13518,6 +13550,10 @@
         "targetAlias": "net8.0",
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[8.0.0-rc.2.23480.2, )"
+          },
+          "Microsoft.AspNetCore.Authentication.MicrosoftAccount": {
             "target": "Package",
             "version": "[8.0.0-rc.2.23480.2, )"
           },
